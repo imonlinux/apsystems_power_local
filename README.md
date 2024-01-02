@@ -35,4 +35,8 @@ sensor:
     ip_address: "192.168.1.234"  # Replace with your device's IP address
 ```
 
-I am working to implement the custom component to allow configuration of the sensor from the UI.
+ToDo:
+
+Change the sensor state class to total_increasing.
+
+Implement the custom component to allow configuration of the sensor from the UI.
