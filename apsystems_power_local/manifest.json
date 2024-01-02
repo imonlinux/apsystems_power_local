@@ -1,0 +1,9 @@
+{
+    "domain": "apsystems_power_local",
+    "name": "APSystems Power Local",
+    "documentation": "https://www.example.com",
+    "dependencies": [],
+    "codeowners": [],
+    "requirements": ["requests"],
+    "version": "1.0.0"
+}
