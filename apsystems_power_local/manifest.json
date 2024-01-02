@@ -1,7 +1,7 @@
 {
     "domain": "apsystems_power_local",
     "name": "APSystems Power Local",
-    "documentation": "https://www.example.com",
+    "documentation": "https://github.com/imonlinux/apsystems_power_local",
     "dependencies": [],
     "codeowners": [],
     "requirements": ["requests"],
