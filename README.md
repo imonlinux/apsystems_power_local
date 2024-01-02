@@ -8,6 +8,25 @@ Supervisor 2023.12.0
 Operating System 11.2
 Frontend 20231208.2
 ```
+
+Installation:
+
+Copy the apsystems_power_local folder into the Custom Compenents folder of you HA instance.
+
+```
+/homeassistant/custom_components/apsystems_power_local
+```
+ The foler apsystems_power_local should contain the files:
+ ```markdown
+custom_components/
+│
+└─── apsystems_power_local/
+    │   __init__.py
+    │   manifest.json
+    │   sensor.py
+    │   const.py
+```
+
 Component requires you to put the following sensor in your configuration.yaml file:
 
 ```yaml
