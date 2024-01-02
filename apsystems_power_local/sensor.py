@@ -39,7 +39,7 @@ class APSystemsSensor(SensorEntity):
 
     @property
     def state_class(self):
-        return STATE_CLASS_MEASUREMENT
+        return total_increasing
 
     @property
     def unit_of_measurement(self):
