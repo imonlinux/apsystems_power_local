@@ -37,6 +37,6 @@ sensor:
 
 ToDo:
 
-Change the sensor state class to total_increasing.
+~~Change the sensor state class to total_increasing.~~
 
 Implement the custom component to allow configuration of the sensor from the UI.
