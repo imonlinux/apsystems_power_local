@@ -1,6 +1,8 @@
 # apsystems_power_local
 Home Assistant custom component used to scrape the value of Solar Generated Today: from an APSystems ECU's local web interface (http://{local_ip}/index.php/realtimedata/power_graph).
 
+ECU-R (SunSpec logo/ECU-ID starting with 2162xxxxxxxx)
+
 This custom component is currently working on my HA system:
 ```
 Core 2023.12.4
