@@ -43,4 +43,31 @@ ToDo:
 
 Implement the custom component to allow configuration of the sensor from the UI.
 
-Implement requirements for installation via HACS
+
+## HACS Installation Instructions
+To install this component via HACS:
+1. Open HACS in Home Assistant.
+2. Go to "Integrations" and click on the "+ ADD" button at the bottom right corner.
+3. Search for "APSystems Power Local" and select it.
+4. Click on "Install".
+
+## Configuration
+After installation, you need to configure the component:
+- If your component requires configuration in `configuration.yaml`, add the necessary lines.
+- For UI configuration, go to 'Configuration' -> 'Integrations' -> 'Add Integration', and then select "APSystems Power Local".
+
+## Usage
+Provide examples of how to use your component, such as Lovelace UI configurations or automations.
+
+## Troubleshooting and Support
+For common issues and their resolutions, [visit this link](https://github.com/imonlinux/apsystems_power_local).
+To report issues or seek support, please use the [issue tracker](https://github.com/imonlinux/apsystems_power_local/issues).
+
+## Contributing
+Contributions to this project are welcome! To contribute, please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request.
+
+## Changelog
+For information about the latest changes and updates, refer to the [changelog](https://github.com/imonlinux/apsystems_power_local/releases).
