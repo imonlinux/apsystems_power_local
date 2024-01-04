@@ -5,10 +5,10 @@ ECU-R (SunSpec logo/ECU-ID starting with 2162xxxxxxxx)
 
 This custom component is currently working on my HA system:
 ```
-Core 2023.12.4
+Core 2024.1.0
 Supervisor 2023.12.0
 Operating System 11.2
-Frontend 20231208.2
+Frontend 20240103.3
 ```
 
 Manual Installation:
