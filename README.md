@@ -28,17 +28,6 @@ custom_components/
     │   sensor.py
     │   const.py
 ```
-## Manual Configuratation:
-
-Component requires you to put the following sensor in your configuration.yaml file:
-
-```yaml
-sensor:
-  - platform: apsystems_power_local
-    ip_address: "192.168.1.234"  # Replace with your device's IP address
-```
-Restart Home Assistant
-
 ## HACS Installation Instructions
 To manually add this repository to HACS and install the component:
 
