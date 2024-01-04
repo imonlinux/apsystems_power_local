@@ -40,12 +40,35 @@ sensor:
 Restart Home Assistant
 
 ## HACS Installation Instructions
-To install this component via HACS:
+To manually add this repository to HACS and install the component:
+
 1. Open HACS in Home Assistant.
-2. Go to "Integrations" and click on the "+ ADD" button at the bottom right corner.
-3. Search for "APSystems Power Local" and select it.
-4. Click on "Install".
-5. Restart Home Assistant.
+2. Navigate to "Integrations" section.
+3. In the top right corner, click on the three dots and select "Custom repositories".
+4. In the dialog that appears, paste the URL of this repository (`https://github.com/imonlinux/apsystems_power_local`) into the 'Repository' field.
+5. Select 'Integration' as the category.
+6. Click 'Add'.
+7. The component should now appear in the HACS integrations list. Search for "APSystems Power Local" and select it.
+8. Click on "Install" to install the component.
+9. Restart Home Assistant.
+
+Once installed, you can proceed with the configuration steps as outlined in this README.
+
+## Configuration
+After installation, you need to configure the component:
+- If your component requires configuration in `configuration.yaml`, add the necessary lines.
+- For UI configuration, go to 'Configuration' -> 'Integrations' -> 'Add Integration', and then select "APSystems Power Local".
+
+
+## Usage
+To add the APSystems Power entity to the Energy Dashboard for solar energy monitoring, follow these steps:
+1. Ensure that the `apsystems_power_local` component is correctly installed and configured.
+2. Navigate to the Energy Dashboard in your Home Assistant interface.
+3. Click on 'Settings' in the top right corner of the Energy Dashboard.
+4. Under 'Solar Panels', select 'Add Solar Production'.
+5. From the list of available entities, choose the `APSystems Power` entity.
+6. Follow the prompts to configure and add the entity to your Energy Dashboard.
+7. Once added, your Energy Dashboard will display solar energy production data from your APSystems device.
 
 ## Configuration
 After installation, you need to configure the component:
@@ -84,6 +107,6 @@ ToDo:
 
 ~~Change the sensor state class to total_increasing.~~
 
-~~Implement requirements for installation via HACS~~
-
 Implement the custom component to allow configuration of the sensor from the UI.
+
+Implement requirements for installation via HACS
