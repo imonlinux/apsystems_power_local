@@ -77,7 +77,7 @@ Contributions to this project are welcome! To contribute, please follow these st
 For information about the latest changes and updates, refer to the [changelog](https://github.com/imonlinux/apsystems_power_local/releases).
 
 
-ToDo:
+## ToDo:
 
 ~~Change the sensor state class to total_increasing.~~
 
