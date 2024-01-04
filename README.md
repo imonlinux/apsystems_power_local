@@ -55,8 +55,12 @@ Once installed, you can proceed with the configuration steps as outlined in this
 
 ## Configuration
 After installation, you need to configure the component:
-- If your component requires configuration in `configuration.yaml`, add the necessary lines.
-- For UI configuration, go to 'Configuration' -> 'Integrations' -> 'Add Integration', and then select "APSystems Power Local".
+- This component requires configuration in `configuration.yaml`, add the necessary lines.
+```yaml
+sensor:
+  - platform: apsystems_power_local
+    ip_address: "192.168.1.234"  # Replace with your device's IP address
+```
 
 ### Restart Home Assistant.
 
