@@ -3,6 +3,10 @@ Home Assistant custom component used to scrape the value of Solar Generated Toda
 
 ECU-R (SunSpec logo/ECU-ID starting with 2162xxxxxxxx)
 
+Make sure that your APSystems ECU-R has this web page visible on your network.
+
+![Screenshot from 2024-01-04 11-04-55](https://github.com/imonlinux/apsystems_power_local/assets/39863321/af5f3887-0866-43d2-bc7f-36e5c2a71810)
+
 This custom component is currently working on my HA system:
 ```
 Core 2024.1.0
@@ -62,6 +66,10 @@ To add the APSystems Power entity to the Energy Dashboard for solar energy monit
 5. From the list of available entities, choose the `APSystems Power` entity.
 6. Follow the prompts to configure and add the entity to your Energy Dashboard.
 7. Once added, your Energy Dashboard will display solar energy production data from your APSystems device.
+
+## Your Energy Dashboard should look like this:
+![Screenshot from 2024-01-04 11-09-40](https://github.com/imonlinux/apsystems_power_local/assets/39863321/7aea674e-38a4-457d-928c-886fe305040c)
+
 
 ## Troubleshooting and Support
 For common issues and their resolutions, [visit this link](https://github.com/imonlinux/apsystems_power_local).
