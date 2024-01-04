@@ -2,7 +2,7 @@ import requests
 import re
 from datetime import timedelta
 from homeassistant.util import Throttle
-from homeassistant.components.sensor import SensorEntity, STATE_CLASS_TOTAL_INCREASING
+from homeassistant.components.sensor import SensorEntity, TOTAL_INCREASING
 from homeassistant.const import ENERGY_KILO_WATT_HOUR, DEVICE_CLASS_ENERGY
 
 # Define the minimum time interval between updates
@@ -39,7 +39,7 @@ class APSystemsSensor(SensorEntity):
 
     @property
     def state_class(self):
-        return STATE_CLASS_TOTAL_INCREASING
+        return TOTAL_INCREASING
 
     @property
     def unit_of_measurement(self):
