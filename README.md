@@ -50,7 +50,6 @@ To manually add this repository to HACS and install the component:
 6. Click 'Add'.
 7. The component should now appear in the HACS integrations list. Search for "APSystems Power Local" and select it.
 8. Click on "Install" to install the component.
-9. Restart Home Assistant.
 
 Once installed, you can proceed with the configuration steps as outlined in this README.
 
@@ -59,6 +58,7 @@ After installation, you need to configure the component:
 - If your component requires configuration in `configuration.yaml`, add the necessary lines.
 - For UI configuration, go to 'Configuration' -> 'Integrations' -> 'Add Integration', and then select "APSystems Power Local".
 
+### Restart Home Assistant.
 
 ## Usage
 To add the APSystems Power entity to the Energy Dashboard for solar energy monitoring, follow these steps:
