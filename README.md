@@ -11,7 +11,7 @@ Operating System 11.2
 Frontend 20231208.2
 ```
 
-Installation:
+Manual Installation:
 
 Copy the apsystems_power_local folder into the Custom Compenents folder of you HA instance.
 
@@ -19,7 +19,7 @@ Copy the apsystems_power_local folder into the Custom Compenents folder of you H
 /homeassistant/custom_components/apsystems_power_local
 ```
  The foler apsystems_power_local should contain the files:
- ```markdown
+```markdown
 custom_components/
 │
 └─── apsystems_power_local/
@@ -28,6 +28,7 @@ custom_components/
     │   sensor.py
     │   const.py
 ```
+Manual Configuratation:
 
 Component requires you to put the following sensor in your configuration.yaml file:
 
@@ -36,13 +37,7 @@ sensor:
   - platform: apsystems_power_local
     ip_address: "192.168.1.234"  # Replace with your device's IP address
 ```
-
-ToDo:
-
-~~Change the sensor state class to total_increasing.~~
-
-Implement the custom component to allow configuration of the sensor from the UI.
-
+Restart Home Assistant
 
 ## HACS Installation Instructions
 To install this component via HACS:
@@ -50,14 +45,26 @@ To install this component via HACS:
 2. Go to "Integrations" and click on the "+ ADD" button at the bottom right corner.
 3. Search for "APSystems Power Local" and select it.
 4. Click on "Install".
+5. Restart Home Assistant.
 
 ## Configuration
 After installation, you need to configure the component:
-- If your component requires configuration in `configuration.yaml`, add the necessary lines.
-- For UI configuration, go to 'Configuration' -> 'Integrations' -> 'Add Integration', and then select "APSystems Power Local".
-
+- This component requires configuration in `configuration.yaml`, add the necessary lines.
+```yaml
+sensor:
+  - platform: apsystems_power_local
+    ip_address: "192.168.1.234"  # Replace with your device's IP address
+```
 ## Usage
-Provide examples of how to use your component, such as Lovelace UI configurations or automations.
+To add the APSystems Power entity to the Energy Dashboard for solar energy monitoring, follow these steps:
+1. Ensure that the `apsystems_power_local` component is correctly installed and configured.
+2. Navigate to the Energy Dashboard in your Home Assistant interface.
+3. Click on 'Settings' in the top right corner of the Energy Dashboard.
+4. Under 'Solar Panels', select 'Add Solar Production'.
+5. From the list of available entities, choose the `APSystems Power` entity.
+6. Follow the prompts to configure and add the entity to your Energy Dashboard.
+7. Once added, your Energy Dashboard will display solar energy production data from your APSystems device.
+
 
 ## Troubleshooting and Support
 For common issues and their resolutions, [visit this link](https://github.com/imonlinux/apsystems_power_local).
@@ -71,3 +78,12 @@ Contributions to this project are welcome! To contribute, please follow these st
 
 ## Changelog
 For information about the latest changes and updates, refer to the [changelog](https://github.com/imonlinux/apsystems_power_local/releases).
+
+
+ToDo:
+
+~~Change the sensor state class to total_increasing.~~
+
+~~Implement requirements for installation via HACS~~
+
+Implement the custom component to allow configuration of the sensor from the UI.
