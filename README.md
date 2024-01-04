@@ -11,7 +11,7 @@ Operating System 11.2
 Frontend 20240103.3
 ```
 
-Manual Installation:
+##Manual Installation:
 
 Copy the apsystems_power_local folder into the Custom Compenents folder of you HA instance.
 
@@ -28,7 +28,7 @@ custom_components/
     │   sensor.py
     │   const.py
 ```
-Manual Configuratation:
+##Manual Configuratation:
 
 Component requires you to put the following sensor in your configuration.yaml file:
 
