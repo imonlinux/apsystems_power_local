@@ -2,8 +2,12 @@ import requests
 import re
 from datetime import timedelta
 from homeassistant.util import Throttle
-from homeassistant.components.sensor import SensorEntity, SensorStateClass.TOTAL_INCREASING
-from homeassistant.const import UnitOfEnergy.KILO_WATT_HOUR, SensorDeviceClass.ENERGY
+from homeassistant.components.sensor import (
+    SensorEntity, 
+    SensorDeviceClass,
+    SensorStateClass
+)
+from homeassistant.const import UnitOfEnergy
 
 # Define the minimum time interval between updates
 MIN_TIME_BETWEEN_UPDATES = timedelta(minutes=5)
