@@ -81,6 +81,6 @@ For information about the latest changes and updates, refer to the [changelog](h
 
 ~~Change the sensor state class to total_increasing.~~
 
-Implement the custom component to allow configuration of the sensor from the UI.
+~~Implement requirements for installation via HACS~~
 
-Implement requirements for installation via HACS
+Implement the custom component to allow configuration of the sensor from the UI.
