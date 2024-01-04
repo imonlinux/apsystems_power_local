@@ -63,25 +63,6 @@ To add the APSystems Power entity to the Energy Dashboard for solar energy monit
 6. Follow the prompts to configure and add the entity to your Energy Dashboard.
 7. Once added, your Energy Dashboard will display solar energy production data from your APSystems device.
 
-## Configuration
-After installation, you need to configure the component:
-- This component requires configuration in `configuration.yaml`, add the necessary lines.
-```yaml
-sensor:
-  - platform: apsystems_power_local
-    ip_address: "192.168.1.234"  # Replace with your device's IP address
-```
-## Usage
-To add the APSystems Power entity to the Energy Dashboard for solar energy monitoring, follow these steps:
-1. Ensure that the `apsystems_power_local` component is correctly installed and configured.
-2. Navigate to the Energy Dashboard in your Home Assistant interface.
-3. Click on 'Settings' in the top right corner of the Energy Dashboard.
-4. Under 'Solar Panels', select 'Add Solar Production'.
-5. From the list of available entities, choose the `APSystems Power` entity.
-6. Follow the prompts to configure and add the entity to your Energy Dashboard.
-7. Once added, your Energy Dashboard will display solar energy production data from your APSystems device.
-
-
 ## Troubleshooting and Support
 For common issues and their resolutions, [visit this link](https://github.com/imonlinux/apsystems_power_local).
 To report issues or seek support, please use the [issue tracker](https://github.com/imonlinux/apsystems_power_local/issues).
