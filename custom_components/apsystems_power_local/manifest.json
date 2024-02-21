@@ -3,7 +3,13 @@
     "name": "APSystems Power Local",
     "documentation": "https://github.com/imonlinux/apsystems_power_local",
     "dependencies": [],
-    "codeowners": ["imonlinux"],
-    "requirements": ["requests"],
-    "version": "v1.1.0"
+    "codeowners": [
+        "imonlinux"
+    ],
+    "requirements": [
+        "requests"
+    ],
+    "version": "v1.1.0",
+    "config_flow": true,
+    "iot_class": "local_polling"
 }
