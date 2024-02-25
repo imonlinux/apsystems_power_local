@@ -1,9 +1,11 @@
+
 {
-    "domain": "apsystems_power_local",
-    "name": "APSystems Power Local",
-    "documentation": "https://github.com/imonlinux/apsystems_power_local",
-    "dependencies": [],
-    "codeowners": ["imonlinux"],
-    "requirements": ["requests"],
-    "version": "v1.1.0"
+  "domain": "apsystems_power_local",
+  "name": "APSystems Power Local",
+  "config_flow": true,
+  "version": "1.2.0",
+  "requirements": ["requests"],
+  "dependencies": [],
+  "codeowners": [],
+  "documentation": "https://github.com/imonlinux/apsystems_power_local"
 }

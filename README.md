@@ -9,10 +9,10 @@ Make sure that your APSystems ECU-R has this web page visible on your network.
 
 This custom component is currently working on my HA system:
 ```
-Core 2024.1.0
-Supervisor 2023.12.0
-Operating System 11.2
-Frontend 20240103.3
+Core              2024.2.3
+Supervisor        2024.02.0
+Operating System  11.5
+Frontend          20240207.1
 ```
 
 ## Manual Installation:
@@ -28,6 +28,7 @@ custom_components/
 │
 └─── apsystems_power_local/
     │   __init__.py
+    |   config_flow.py
     │   manifest.json
     │   sensor.py
     │   const.py
@@ -48,12 +49,16 @@ Once installed, you can proceed with the configuration steps as outlined in this
 
 ## Configuration
 After installation, you need to configure the component:
-- This component requires configuration in `configuration.yaml`, add the necessary lines.
-```yaml
-sensor:
-  - platform: apsystems_power_local
-    ip_address: "192.168.1.234"  # Replace with your device's IP address
-```
+1. Navigate the the Add Integration page in Settings/Devices & Services.
+2. Click Add Integration button at the bottom of the page.
+3. Search for APSystems Power Local.
+4. Select APSystems Power Local from the list.
+
+![Screenshot from 2024-02-24 18-58-09](https://github.com/imonlinux/apsystems_power_local/assets/39863321/ecf2a5c1-8e3d-47cb-9809-8d08123bfcd2)
+
+5. In the entry form enter the local IP address of your APSystems ECU and click Submit.
+
+![Screenshot from 2024-02-24 18-30-58](https://github.com/imonlinux/apsystems_power_local/assets/39863321/63347cb7-e7b4-40ae-aa29-5d715768cf35)
 
 ### Restart Home Assistant.
 
@@ -91,4 +96,4 @@ For information about the latest changes and updates, refer to the [changelog](h
 
 ~~Implement requirements for installation via HACS~~
 
-Implement the custom component to allow configuration of the sensor from the UI.
+~~Implement the custom component to allow configuration of the sensor from the UI.~~
