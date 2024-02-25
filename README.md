@@ -48,12 +48,13 @@ Once installed, you can proceed with the configuration steps as outlined in this
 
 ## Configuration
 After installation, you need to configure the component:
-- This component requires configuration in `configuration.yaml`, add the necessary lines.
-```yaml
-sensor:
-  - platform: apsystems_power_local
-    ip_address: "192.168.1.234"  # Replace with your device's IP address
-```
+1. Navigate the the Add Integration page in Settings/Devices & Services.
+2. Click Add Integration button at the bottom of the page.
+3. Search for APSystems Power Local.
+4. Select APSystems Power Local from the list.
+![Screenshot from 2024-02-24 18-58-09](https://github.com/imonlinux/apsystems_power_local/assets/39863321/6ac4a3f2-b117-41e8-9d11-27434310fb93)
+5. In the entry form enter the local IP address of your APSystems ECU and click Submit.
+![Screenshot from 2024-02-24 18-30-58](https://github.com/imonlinux/apsystems_power_local/assets/39863321/553ba624-b09a-4cae-b831-2b40acb7648c)
 
 ### Restart Home Assistant.
 
@@ -91,4 +92,4 @@ For information about the latest changes and updates, refer to the [changelog](h
 
 ~~Implement requirements for installation via HACS~~
 
-Implement the custom component to allow configuration of the sensor from the UI.
+--Implement the custom component to allow configuration of the sensor from the UI.--
