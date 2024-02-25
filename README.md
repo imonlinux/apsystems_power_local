@@ -28,6 +28,7 @@ custom_components/
 │
 └─── apsystems_power_local/
     │   __init__.py
+    |   config_flow.py
     │   manifest.json
     │   sensor.py
     │   const.py
@@ -95,4 +96,4 @@ For information about the latest changes and updates, refer to the [changelog](h
 
 ~~Implement requirements for installation via HACS~~
 
---Implement the custom component to allow configuration of the sensor from the UI.--
+~~Implement the custom component to allow configuration of the sensor from the UI.~~
