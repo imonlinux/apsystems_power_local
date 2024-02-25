@@ -27,11 +27,31 @@ class APSystemsSensor(SensorEntity):
     def __init__(self, ip_address):
         self._state = None
         self._ip_address = ip_address
-        self._attr_name = "APSystems Power"
-        self._attr_unique_id = f"apsystems_power_{self._ip_address.replace('.', '_')}"
-        self._attr_device_class = SensorDeviceClass.ENERGY
-        self._attr_state_class = SensorStateClass.TOTAL_INCREASING
-        self._attr_unit_of_measurement = UnitOfEnergy.KILO_WATT_HOUR
+        self._name = "APSystems Power"
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def unique_id(self):
+        return f"apsystems_power_{self._ip_address}"
+
+    @property
+    def device_class(self):
+        return SensorDeviceClass.ENERGY
+
+    @property
+    def state_class(self):
+        return SensorStateClass.TOTAL_INCREASING
+
+    @property
+    def unit_of_measurement(self):
+        return UnitOfEnergy.KILO_WATT_HOUR
+
+    @property
+    def state(self):
+        return self._state
 
     @Throttle(MIN_TIME_BETWEEN_UPDATES)
     async def async_update(self):
