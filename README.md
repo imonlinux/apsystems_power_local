@@ -52,9 +52,11 @@ After installation, you need to configure the component:
 2. Click Add Integration button at the bottom of the page.
 3. Search for APSystems Power Local.
 4. Select APSystems Power Local from the list.
-![Screenshot from 2024-02-24 18-58-09](https://github.com/imonlinux/apsystems_power_local/assets/39863321/6ac4a3f2-b117-41e8-9d11-27434310fb93)
+![Screenshot from 2024-02-24 18-30-58](https://github.com/imonlinux/apsystems_power_local/assets/39863321/63347cb7-e7b4-40ae-aa29-5d715768cf35)
+
 5. In the entry form enter the local IP address of your APSystems ECU and click Submit.
-![Screenshot from 2024-02-24 18-30-58](https://github.com/imonlinux/apsystems_power_local/assets/39863321/553ba624-b09a-4cae-b831-2b40acb7648c)
+![Screenshot from 2024-02-24 18-58-09](https://github.com/imonlinux/apsystems_power_local/assets/39863321/ecf2a5c1-8e3d-47cb-9809-8d08123bfcd2)
+
 
 ### Restart Home Assistant.
 
