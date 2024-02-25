@@ -18,14 +18,12 @@ class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 errors["base"] = "invalid_ip"
 
         fields = {
-            vol.Required("ip_address"): str,
+            vol.Required("ip_address", default='ECU IP Address'): str,
         }
 
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema(fields),
             errors=errors,
-            description_placeholders={
-                "dynamic_link": f'http://{user_input["ip_address"] if user_input else "IP_ADDRESS"}/index.php/realtimedata/power_graph'
-            },
+            
         )
