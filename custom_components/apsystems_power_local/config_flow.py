@@ -3,6 +3,8 @@ import voluptuous as vol
 from .const import DOMAIN, DEFAULT_NAME
 import ipaddress
 
+CONF_PAUSE_AT_NIGHT = "pause_at_night"
+
 class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
     CONNECTION_CLASS = config_entries.CONN_CLASS_LOCAL_POLL
@@ -12,7 +14,6 @@ class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             try:
                 ipaddress.ip_address(user_input["ip_address"])
-                # Use the IP address as the title for easy reference
                 return self.async_create_entry(
                     title=f"{DEFAULT_NAME} ({user_input['ip_address']})",
                     data=user_input,
@@ -22,6 +23,7 @@ class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         fields = {
             vol.Required("ip_address", default=""): str,
+            vol.Optional(CONF_PAUSE_AT_NIGHT, default=False): bool,
         }
 
         return self.async_show_form(
