@@ -30,7 +30,6 @@ custom_components/
   ├── __init__.py
   ├── const.py
   ├── config_flow.py
-  ├── options_flow.py
   ├── manifest.json
   └── sensor.py
 ```
