@@ -27,11 +27,12 @@ Copy the apsystems_power_local folder into the Custom Compenents folder of you H
 custom_components/
 │
 └─── apsystems_power_local/
-    │   __init__.py
-    |   config_flow.py
-    │   manifest.json
-    │   sensor.py
-    │   const.py
+  ├── __init__.py
+  ├── const.py
+  ├── config_flow.py
+  ├── options_flow.py
+  ├── manifest.json
+  └── sensor.py
 ```
 ## HACS Installation Instructions
 To manually add this repository to HACS and install the component:
@@ -56,7 +57,8 @@ After installation, you need to configure the component:
 
 ![Screenshot from 2024-02-24 18-58-09](https://github.com/imonlinux/apsystems_power_local/assets/39863321/ecf2a5c1-8e3d-47cb-9809-8d08123bfcd2)
 
-5. In the entry form enter the local IP address of your APSystems ECU and click Submit.
+5. In the entry form enter the local IP address of your APSystems ECU.
+6. Choose to suspend polling after sunset or not and click Submit.
 
 ![Screenshot from 2024-02-24 18-30-58](https://github.com/imonlinux/apsystems_power_local/assets/39863321/63347cb7-e7b4-40ae-aa29-5d715768cf35)
 
