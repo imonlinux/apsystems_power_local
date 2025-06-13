@@ -58,8 +58,7 @@ After installation, you need to configure the component:
 ![Screenshot from 2024-02-24 18-58-09](https://github.com/imonlinux/apsystems_power_local/assets/39863321/ecf2a5c1-8e3d-47cb-9809-8d08123bfcd2)
 
 5. In the entry form enter the local IP address of your APSystems ECU.
-6. Choose to suspend polling after sunset or not and click Submit.
-
+   
 ![Screenshot from 2024-02-24 18-30-58](https://github.com/imonlinux/apsystems_power_local/assets/39863321/63347cb7-e7b4-40ae-aa29-5d715768cf35)
 
 ### Restart Home Assistant.
@@ -70,7 +69,7 @@ To add the APSystems Power entity to the Energy Dashboard for solar energy monit
 2. Navigate to the Energy Dashboard in your Home Assistant interface.
 3. Click on 'Settings' in the top right corner of the Energy Dashboard.
 4. Under 'Solar Panels', select 'Add Solar Production'.
-5. From the list of available entities, choose the `APSystems Power` entity.
+5. From the list of available entities, choose the `Solar Generated Today` sensor.solar_generated_today entity.
 6. Follow the prompts to configure and add the entity to your Energy Dashboard.
 7. Once added, your Energy Dashboard will display solar energy production data from your APSystems device.
 
@@ -100,4 +99,4 @@ For information about the latest changes and updates, refer to the [changelog](h
 
 ~~Implement the custom component to allow configuration of the sensor from the UI.~~
 
-~~Add the option to stop polling the website after sunset and then start at sunrise.~~
+Add the option to stop polling the website after sunset and then start at sunrise.
