@@ -31,7 +31,7 @@ async def async_setup_entry(
     hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     ip_address = entry.data["ip_address"]
-    pause_at_night = entry.data.get(CONF_PAUSE_AT_NIGHT, False)
+    pause_at_night = entry.options.get(CONF_PAUSE_AT_NIGHT, entry.data.get(CONF_PAUSE_AT_NIGHT, False))
     coordinator = APSystemsDataUpdateCoordinator(hass, ip_address, pause_at_night)
     await coordinator.async_config_entry_first_refresh()
     async_add_entities([APSystemsPowerSensor(coordinator)])
