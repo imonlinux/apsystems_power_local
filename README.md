@@ -9,10 +9,10 @@ Make sure that your APSystems ECU-R has this web page visible on your network.
 
 This custom component is currently working on my HA system:
 ```
-Core              2024.2.3
-Supervisor        2024.02.0
-Operating System  11.5
-Frontend          20240207.1
+Core              2025.6
+Supervisor        2025.05.5
+Operating System  15.2
+Frontend          20250531.2
 ```
 
 ## Manual Installation:
