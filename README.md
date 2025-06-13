@@ -100,4 +100,4 @@ For information about the latest changes and updates, refer to the [changelog](h
 
 ~~Implement the custom component to allow configuration of the sensor from the UI.~~
 
---Add the option to stop polling the website after sunset and then start at sunrise.--
+~~Add the option to stop polling the website after sunset and then start at sunrise.~~
