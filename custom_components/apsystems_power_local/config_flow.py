@@ -1,8 +1,9 @@
-
 from homeassistant import config_entries
 import voluptuous as vol
 from .const import DOMAIN, DEFAULT_NAME
 import ipaddress
+
+CONF_PAUSE_AT_NIGHT = "pause_at_night"
 
 class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
@@ -13,17 +14,21 @@ class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             try:
                 ipaddress.ip_address(user_input["ip_address"])
-                return self.async_create_entry(title=DEFAULT_NAME, data=user_input)
+                return self.async_create_entry(
+                    title=f"{DEFAULT_NAME} ({user_input['ip_address']})",
+                    data=user_input,
+                )
             except ValueError:
-                errors["base"] = "invalid_ip"
+                errors["ip_address"] = "invalid_ip"
 
         fields = {
-            vol.Required("ip_address", default='ECU IP Address'): str,
+            vol.Required("ip_address", default=""): str,
+            vol.Optional(CONF_PAUSE_AT_NIGHT, default=False): bool,
         }
 
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema(fields),
             errors=errors,
-            
+            description_placeholders={},
         )
