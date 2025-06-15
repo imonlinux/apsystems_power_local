@@ -12,9 +12,8 @@ class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             try:
                 ipaddress.ip_address(user_input["ip_address"])
-                # Use the IP address as the title for easy reference
                 return self.async_create_entry(
-                    title=f"{DEFAULT_NAME} ({user_input['ip_address']})",
+                    title=DEFAULT_NAME,
                     data=user_input,
                 )
             except ValueError:
@@ -28,5 +27,4 @@ class APSystemsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             step_id="user",
             data_schema=vol.Schema(fields),
             errors=errors,
-            description_placeholders={},
         )
