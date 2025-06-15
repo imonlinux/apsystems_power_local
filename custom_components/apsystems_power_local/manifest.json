@@ -1,11 +1,11 @@
-
 {
   "domain": "apsystems_power_local",
   "name": "APSystems Power Local",
   "config_flow": true,
-  "version": "1.3",
+  "version": "2.0.0",
   "requirements": ["beautifulsoup4"],
   "dependencies": [],
   "codeowners": ["@imonlinux"],
+  "iot_class": "local_polling",
   "documentation": "https://github.com/imonlinux/apsystems_power_local"
 }
