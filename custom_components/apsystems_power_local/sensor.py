@@ -1,5 +1,7 @@
 import logging
+import re
 from datetime import timedelta
+
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -8,19 +10,21 @@ from homeassistant.helpers.update_coordinator import (
     CoordinatorEntity,
     UpdateFailed,
 )
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.components.sensor import (
     SensorEntity,
     SensorDeviceClass,
     SensorStateClass,
 )
 from homeassistant.const import UnitOfEnergy
+
 from .const import DOMAIN
 
-import aiohttp
 from bs4 import BeautifulSoup
 
 _LOGGER = logging.getLogger(__name__)
 SCAN_INTERVAL = timedelta(minutes=5)
+
 
 async def async_setup_entry(
     hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
@@ -30,33 +34,43 @@ async def async_setup_entry(
     await coordinator.async_config_entry_first_refresh()
     async_add_entities([APSystemsPowerSensor(coordinator)])
 
+
 class APSystemsDataUpdateCoordinator(DataUpdateCoordinator):
-    def __init__(self, hass, ip_address):
+    def __init__(self, hass: HomeAssistant, ip_address: str) -> None:
         super().__init__(
             hass,
             _LOGGER,
             name="APSystems Power Local",
             update_interval=SCAN_INTERVAL,
         )
+        self.hass = hass
         self.ip_address = ip_address
         self.url = f"http://{ip_address}/index.php/realtimedata/power_graph"
+        self._session = async_get_clientsession(hass)
 
     async def _async_update_data(self):
         try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(self.url, timeout=10) as response:
-                    text = await response.text()
-                    soup = BeautifulSoup(text, "html.parser")
-                    span = soup.find("span", id="total")
-                    if span and "kWh" in span.text:
-                        parts = span.text.split(":")
-                        if len(parts) == 2 and "kWh" in parts[1]:
-                            value = parts[1].split("kWh")[0].strip()
-                            return float(value)
-                    raise UpdateFailed("Could not parse solar energy value from page")
+            async with self._session.get(self.url, timeout=10) as response:
+                text = await response.text()
+                soup = BeautifulSoup(text, "html.parser")
+                span = soup.find("span", id="total")
+
+                if not span or not span.text:
+                    raise UpdateFailed("Could not find solar total span on page")
+
+                # Extract the numeric value before "kWh", e.g. "Solar Generated Today: 25.16 kWh"
+                match = re.search(r"([0-9]+(?:\.[0-9]+)?)\s*kWh", span.text)
+                if not match:
+                    raise UpdateFailed(
+                        f"Could not parse kWh value from total span text: {span.text!r}"
+                    )
+
+                return float(match.group(1))
+
         except Exception as err:
             _LOGGER.error("Error fetching APSystems Power data: %s", err)
-            raise UpdateFailed(f"Error updating data: {err}")
+            raise UpdateFailed(f"Error updating data: {err}") from err
+
 
 class APSystemsPowerSensor(CoordinatorEntity, SensorEntity):
     _attr_has_entity_name = True
